@@ -26,26 +26,6 @@
                          height="{{ product.photo_height }}" alt="{{ product.name }}">
                 {% endif %}
                 <div class="product-info">
-                    {#                <div class="product-info-item">#}
-                    {#                    <h2>Заголовк списка №1</h2>#}
-                    {#                    <ul>#}
-                    {#                        <li>Супер длинный первый пункт списка, такой, чтобы переносился</li>#}
-                    {#                        <li>Второй пункт списка</li>#}
-                    {#                        <li>Третий пункт списка</li>#}
-                    {#                    </ul>#}
-                    {#                </div>#}
-                    {#                <div class="product-info-item">#}
-                    {#                    <h2>Заголовк списка №2</h2>#}
-                    {#                    <ul>#}
-                    {#                        <li>Первый пункт списка</li>#}
-                    {#                        <li>Второй пункт списка</li>#}
-                    {#                    </ul>#}
-                    {#                </div>#}
-                    {#                <div class="product-info-item">#}
-                    {#                    <h2>Заголовк списка №3</h2>#}
-                    {#                    <ul>#}
-                    {#                        <li>Первый пункт списка</li>#}
-                    {#                    </ul>#}
                     {% for list in product.option_set.all %}
                         <div class="product-info-item">
                             <h2>{{ list.title }}</h2>
