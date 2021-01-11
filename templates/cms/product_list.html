@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
+    <meta name="keywords" content={{ page.keywords }}>
+    <meta name="description" content={{ page.description }}>
+    <title>{{ page.page_title }}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href={% static 'css/swiper-bundle.min.css' %}>
+    <link rel="stylesheet" href={% static 'css/style.css' %}>
+</head>
+<body>
+<div class="wrapper">
+    <div class="content">
+        {% if page.headline %}
+            <h1>{{ page.headline }}</h1>
+        {% endif %}
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for photo in page.photo_set.all %}
+                    <div class="swiper-slide"><img src="{{ photo.image.url }}" width="50" height="50"
+                                                   alt="{{ photo.name }}"></div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <div class="intro-text">
+            {% for paragraph in page.paragraph_set.all %}
+                <p>{{ paragraph.text }}</p>
+            {% endfor %}
+        </div>
+        <div class="products-list">
+            <h2>Продукты</h2>
+            <ul>
+                {% for product in products %}
+                    <li><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="map" data-latitude="{{ page.latitude }}" data-longitude="{{ page.longitude }}"></div>
+        <h2>Отправить сообщение</h2>
+        <form action="{% url 'send_email' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=28ba27e6-8179-45dd-8a90-a542e1883e67"
+        type="text/javascript"></script>
+<script src={% static 'js/swiper-bundle.min.js' %}></script>
+<script src={% static 'js/main.js' %}></script>
+</body>
+</html>

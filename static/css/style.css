@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    outline: 0;
+    border: 0
+}
+
+body, html, input {
+    font-family: Piazzolla, serif;
+    font-weight: 400
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 128px auto
+}
+
+.content {
+    padding: 0 20px
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 64px;
+    font-weight: 900;
+    margin-bottom: 32px
+}
+
+.swiper-container {
+    width: 100%
+}
+
+.swiper-container img {
+    width: 100%;
+    height: auto
+}
+
+.intro-text {
+    margin: 32px 0 64px 0
+}
+
+p {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 900;
+    margin-bottom: 16px
+}
+
+.products-list {
+    margin-bottom: 80px
+}
+
+.products-list ul li {
+    list-style: none;
+    font-size: 32px;
+    line-height: 48px;
+    width: 50px;
+    margin-bottom: 24px
+}
+
+.products-list ul li a {
+    color: #00008b;
+    text-decoration: none;
+    border-bottom: 1px solid #00008b
+}
+
+.products-list ul li a:hover {
+    border-color: transparent
+}
+
+#map {
+    width: 100%;
+    height: 480px;
+    margin-bottom: 80px
+}
+
+.text-box {
+    border: 1px solid gray;
+    font-size: 24px;
+    line-height: 48px;
+    height: 46px;
+    padding: 0 24px;
+    width: calc(100% - 2px - 48px);
+    margin-bottom: 24px
+}
+
+.button {
+    color: #fff;
+    background: #00008b;
+    border: 0;
+    font-size: 24px;
+    line-height: 64px;
+    font-weight: 900;
+    height: 64px;
+    width: calc(100% - 2px);
+    cursor: pointer
+}
+
+.button:hover {
+    background: #00f
+}
+
+.error {
+    border-color: red;
+    color: red
+}
+
+.product-image {
+    width: 100%;
+    height: auto
+}
+
+.product-info {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap: 0 48px
+}
+
+.product-info-item ul li {
+    font-size: 20px;
+    line-height: 32px;
+    list-style: none;
+    margin-bottom: 16px
+}
+
+.go-back {
+    font-size: 18px;
+    line-height: 25px;
+    color: #00008b;
+    text-decoration: none;
+    border-bottom: 1px solid #00008b;
+    display: inline-block;
+    margin-bottom: 32px
+}
+
+.go-back:hover {
+    border-color: transparent
+}
+
+@media only screen and (max-width: 1024px) {
+    .product-info {
+        grid-template-columns:1fr;
+        gap: 16px 0
+    }
+}
